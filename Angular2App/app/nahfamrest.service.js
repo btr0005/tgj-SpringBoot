@@ -14,7 +14,7 @@ require('rxjs/Rx');
 var NahfamRestService = (function () {
     function NahfamRestService(_http) {
         this._http = _http;
-        this.Server = "http://localhost:8080/greeting?name=";
+        this.Server = "http://localhost:8080/join?name=";
     }
     NahfamRestService.prototype.tellMe = function (name) {
         return this._http.get(this.Server + name).map(function (res) { return res.json(); });

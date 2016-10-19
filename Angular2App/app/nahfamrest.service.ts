@@ -4,7 +4,7 @@ import 'rxjs/Rx'
 
 @Injectable()
 export class NahfamRestService {
-    public Server: string = "http://localhost:8080/greeting?name=";
+    public Server: string = "http://localhost:8080/join?name=";
 	
 	constructor(private _http: Http){}
 	
