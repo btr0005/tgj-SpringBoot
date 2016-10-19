@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NahfamRestService } from './nahfamrest.service';
+import { MembersService } from './members.service';
 import { OnInit } from '@angular/core';
 
 @Component({
@@ -14,7 +14,7 @@ import { OnInit } from '@angular/core';
 			</div>
 			{{message}}
 			`,
-	providers: [NahfamRestService]
+	providers: [MembersService]
 })
 
 export class AppComponent { 
@@ -26,7 +26,7 @@ export class AppComponent {
 		};
 	message: any;
 		
-	constructor(private nahfamService: NahfamRestService) { }	
+	constructor(private membersService: MembersService) { }	
 
 			
 	ngOnInit(): void {
@@ -34,7 +34,7 @@ export class AppComponent {
 	}
 	
 	getMessage(): void {
-		this.nahfamService.tellMe("David")
+		this.membersService.tellMe("David")
             .subscribe(
                 data => this.message = JSON.stringify(data),
                 error => console.log("Error HTTP GET Service")

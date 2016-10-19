@@ -11,19 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/Rx');
-var NahfamRestService = (function () {
-    function NahfamRestService(_http) {
+var MembersService = (function () {
+    function MembersService(_http) {
         this._http = _http;
         this.Server = "http://localhost:8080/join?name=";
     }
-    NahfamRestService.prototype.tellMe = function (name) {
+    MembersService.prototype.tellMe = function (name) {
         return this._http.get(this.Server + name).map(function (res) { return res.json(); });
     };
-    NahfamRestService = __decorate([
+    MembersService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], NahfamRestService);
-    return NahfamRestService;
+    ], MembersService);
+    return MembersService;
 }());
-exports.NahfamRestService = NahfamRestService;
-//# sourceMappingURL=nahfamrest.service.js.map
+exports.MembersService = MembersService;
+//# sourceMappingURL=members.service.js.map

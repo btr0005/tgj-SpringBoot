@@ -3,7 +3,7 @@ import {Http} from '@angular/http';
 import 'rxjs/Rx'
 
 @Injectable()
-export class NahfamRestService {
+export class MembersService {
     public Server: string = "http://localhost:8080/join?name=";
 	
 	constructor(private _http: Http){}

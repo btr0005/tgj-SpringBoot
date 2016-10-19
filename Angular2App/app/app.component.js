@@ -9,10 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var nahfamrest_service_1 = require('./nahfamrest.service');
+var members_service_1 = require('./members.service');
 var AppComponent = (function () {
-    function AppComponent(nahfamService) {
-        this.nahfamService = nahfamService;
+    function AppComponent(membersService) {
+        this.membersService = membersService;
         this.title = 'Join Club';
         this.member = {
             id: 1,
@@ -25,16 +25,16 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.getMessage = function () {
         var _this = this;
-        this.nahfamService.tellMe("David")
+        this.membersService.tellMe("David")
             .subscribe(function (data) { return _this.message = JSON.stringify(data); }, function (error) { return console.log("Error HTTP GET Service"); });
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             template: "\n\t\t\t<h1>{{title}}</h1>\n\t\t\t<h2>{{member.name}} details!</h2>\n\t\t\t<div><label>id: </label>{{member.id}}</div>\n\t\t\t<div>\n\t\t\t\t<label>name: </label>\n\t\t\t\t<input [(ngModel)]=\"member.name\" placeholder=\"name\">\n\t\t\t</div>\n\t\t\t{{message}}\n\t\t\t",
-            providers: [nahfamrest_service_1.NahfamRestService]
+            providers: [members_service_1.MembersService]
         }), 
-        __metadata('design:paramtypes', [nahfamrest_service_1.NahfamRestService])
+        __metadata('design:paramtypes', [members_service_1.MembersService])
     ], AppComponent);
     return AppComponent;
 }());
