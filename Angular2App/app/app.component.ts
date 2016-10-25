@@ -12,7 +12,7 @@ import { OnInit } from '@angular/core';
 				<label>name: </label>
 				<input [(ngModel)]="member.name" placeholder="name">
 			</div>
-			{{message}}
+			message: {{message}}
 			`,
 	providers: [MembersService]
 })
@@ -22,7 +22,6 @@ export class AppComponent {
 	member: Member = {
 			id: 1,
 			name: 'Chort',
-			gender: 1,
 		};
 	message: any;
 		
@@ -36,7 +35,7 @@ export class AppComponent {
 	getMessage(): void {
 		this.membersService.tellMe("David")
             .subscribe(
-                data => this.message = JSON.stringify(data),
+                data => this.message = data.name,
                 error => console.log("Error HTTP GET Service")
             );
 	}
@@ -46,7 +45,6 @@ export class AppComponent {
 export class Member {
 	id: number;
 	name: string;
-	gender: number;
 }
 
 
