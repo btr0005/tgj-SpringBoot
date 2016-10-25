@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { MembersService } from './members.service';
 import { OnInit } from '@angular/core';
+import {AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
+import {NgModel} from '@angular/forms';
 
 @Component({
   selector: 'my-app',
   template: `
+			<alert type="info">ng2-bootstrap hello world!</alert>
 			<h1>{{title}}</h1>
 			<h2>{{member.name}} details!</h2>
 			<div><label>id: </label>{{member.id}}</div>

@@ -30,7 +30,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n\t\t\t<h1>{{title}}</h1>\n\t\t\t<h2>{{member.name}} details!</h2>\n\t\t\t<div><label>id: </label>{{member.id}}</div>\n\t\t\t<div>\n\t\t\t\t<label>name: </label>\n\t\t\t\t<input [(ngModel)]=\"member.name\" placeholder=\"name\">\n\t\t\t</div>\n\t\t\tmessage: {{message}}\n\t\t\t",
+            template: "\n\t\t\t<alert type=\"info\">ng2-bootstrap hello world!</alert>\n\t\t\t<h1>{{title}}</h1>\n\t\t\t<h2>{{member.name}} details!</h2>\n\t\t\t<div><label>id: </label>{{member.id}}</div>\n\t\t\t<div>\n\t\t\t\t<label>name: </label>\n\t\t\t\t<input [(ngModel)]=\"member.name\" placeholder=\"name\">\n\t\t\t</div>\n\t\t\tmessage: {{message}}\n\t\t\t",
             providers: [members_service_1.MembersService]
         }), 
         __metadata('design:paramtypes', [members_service_1.MembersService])
