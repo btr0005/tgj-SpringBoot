@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { MembersService } from './members.service';
 import { OnInit } from '@angular/core';
 import {AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
-import {NgModel} from '@angular/forms';
 
 @Component({
   selector: 'my-app',
