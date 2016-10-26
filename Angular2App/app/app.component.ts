@@ -1,52 +1,22 @@
 import { Component } from '@angular/core';
-import { MembersService } from './members.service';
 import { OnInit } from '@angular/core';
-import {AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
   selector: 'my-app',
   template: `
-			<alert type="info">ng2-bootstrap hello world!</alert>
-			<h1>{{title}}</h1>
-			<h2>{{member.name}} details!</h2>
-			<div><label>id: </label>{{member.id}}</div>
-			<div>
-				<label>name: </label>
-				<input [(ngModel)]="member.name" placeholder="name">
+			<div class="container">
+				<!--<alert type="info" dismissible="true">Welcome to the hompeage!</alert>-->
+				<div class="page-header"><h1>{{title}}</h1></div>
+				<!--<nav class="navbar navbar-default"></nav>-->
+				<a href="#">Link</a>
 			</div>
-			message: {{message}}
 			`,
 	providers: [MembersService]
 })
 
 export class AppComponent { 
-	title = 'Join Club';
-	member: Member = {
-			id: 1,
-			name: 'Chort',
-		};
-	message: any;
-		
-	constructor(private membersService: MembersService) { }	
-
-			
-	ngOnInit(): void {
-		this.getMessage();
-	}
-	
-	getMessage(): void {
-		this.membersService.tellMe("David")
-            .subscribe(
-                data => this.message = data.name,
-                error => console.log("Error HTTP GET Service")
-            );
-	}
-	
-}
-
-export class Member {
-	id: number;
-	name: string;
+	title = 'Homepage';
 }
 
 
