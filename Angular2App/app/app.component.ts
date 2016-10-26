@@ -7,12 +7,12 @@ import { JoinComponent } from './join.component';
 			<div class="container">
 				<div class="page-header">
 					<h1>{{title}}</h1>
-						<a href="#">Link</a>
+						<a routerLink="/join">Become a Member</a>
 				</div>
 				
-			<join-component></join-component>
+				<router-outlet></router-outlet>
 			</div>			
-			`,
+		`,
 })
 
 export class AppComponent { 
