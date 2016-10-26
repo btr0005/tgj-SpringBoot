@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
 import { AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
@@ -12,7 +11,6 @@ import { AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
 				<a href="#">Link</a>
 			</div>
 			`,
-	providers: [MembersService]
 })
 
 export class AppComponent { 
