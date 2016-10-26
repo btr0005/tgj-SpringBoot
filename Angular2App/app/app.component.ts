@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
-import { AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
+import { JoinComponent } from './join.component';
 
 @Component({
   selector: 'my-app',
   template: `
 			<div class="container">
-				<!--<alert type="info" dismissible="true">Welcome to the hompeage!</alert>-->
-				<div class="page-header"><h1>{{title}}</h1></div>
-				<!--<nav class="navbar navbar-default"></nav>-->
-				<a href="#">Link</a>
-			</div>
+				<div class="page-header">
+					<h1>{{title}}</h1>
+						<a href="#">Link</a>
+				</div>
+				
+			<join-component></join-component>
+			</div>			
 			`,
 })
 

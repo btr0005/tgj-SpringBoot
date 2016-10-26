@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { AppComponent }  from './app.component';
+import { JoinComponent } from './join.component';
 
 @NgModule({
   imports:  [ 
@@ -13,7 +14,9 @@ import { AppComponent }  from './app.component';
 			HttpModule,
 			Ng2BootstrapModule
 			],
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent,
+				  JoinComponent
+				],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
