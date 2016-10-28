@@ -7,6 +7,8 @@ import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { AppComponent }  from './app.component';
 import { JoinComponent } from './join.component';
+import { MemberListComponent } from './memberlist.component';
+import { MembersService } from './members.service';
 
 @NgModule({
   imports:  [ 
@@ -18,11 +20,19 @@ import { JoinComponent } from './join.component';
 			{
 				path: 'join',
 				component: JoinComponent
+			},
+			{
+				path: 'members',
+				component: MemberListComponent
 			}
 		])
 	],
+  providers: [
+		MembersService
+	],
   declarations: [ AppComponent,
-				  JoinComponent
+				  JoinComponent,
+				  MemberListComponent
 				],
   bootstrap:    [ AppComponent ]
 })

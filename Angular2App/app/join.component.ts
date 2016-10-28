@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 
+import { Member } from './member';
+
 @Component({
   selector: 'join-component',
   template: `
@@ -51,9 +53,3 @@ export class JoinComponent {
 	}
 }
 
-export class Member {
-	constructor(
-		public name: string,
-		public color: string
-	){}
-}
