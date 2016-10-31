@@ -19,6 +19,10 @@ import { StoryComponent } from './story.component';
 		Ng2BootstrapModule,
 		RouterModule.forRoot([
 			{
+				path: '',
+				component: MemberListComponent
+			},
+			{
 				path: 'join',
 				component: JoinComponent
 			},

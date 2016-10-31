@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
 					<ul class="nav nav-pills nav-justified">
 						<li role="presentation"><a routerLink="/members">Members</a></li>
 						<li role="presentation"><a routerLink="/join">Become a Member</a></li>
+						<li role="presentation"><a routerLink="/story">Story</a></li>
 					</ul>
 				</div>
 				
