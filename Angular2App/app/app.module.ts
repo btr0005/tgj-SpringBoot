@@ -9,6 +9,7 @@ import { AppComponent }  from './app.component';
 import { JoinComponent } from './join.component';
 import { MemberListComponent } from './memberlist.component';
 import { MembersService } from './members.service';
+import { StoryComponent } from './story.component';
 
 @NgModule({
   imports:  [ 
@@ -24,6 +25,10 @@ import { MembersService } from './members.service';
 			{
 				path: 'members',
 				component: MemberListComponent
+			},
+			{
+				path: 'story',
+				component: StoryComponent
 			}
 		])
 	],
@@ -32,7 +37,8 @@ import { MembersService } from './members.service';
 	],
   declarations: [ AppComponent,
 				  JoinComponent,
-				  MemberListComponent
+				  MemberListComponent,
+				  StoryComponent
 				],
   bootstrap:    [ AppComponent ]
 })
