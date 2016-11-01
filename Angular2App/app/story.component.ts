@@ -7,11 +7,27 @@ import { Member } from './member';
 			
 				<h3>{{story.name}}</h3>
 				
+				<div class="text-right">
+					<button type="button" class="btn btn-warning btn-xs" 
+						(click)="this.aestheticModeToggle()">Aesthetic Mode</button>
+				</div>
+				
 				<div class="panel panel-default">
 				  <div class="panel-body" >
-					<p>
-						{{story.text}} <i>{{new_text}}</i>
-					</p>
+					
+						<div *ngIf="!this.aestheticMode">
+							<p>
+								<font *ngFor="let item of story.text_units" color="{{item.author.color}}">{{item.text}} </font>
+								<i>{{new_text}}</i>
+							</p>
+						</div>
+						<div *ngIf="this.aestheticMode">
+							<p>
+								<font *ngFor="let item of story.text_units" color="{{item.author.color}}">{{item.text.split('').join(' ')}} </font>
+								<i>{{new_text}}</i>
+							</p>
+						</div>
+					
 				  </div>
 				</div>				
 				
@@ -45,13 +61,36 @@ export class StoryComponent {
 	submitted = false;
 	new_text = "";
 	word_count = 0;
+	aestheticMode = false;
 	
-	story = new Story("My Story","Once upon a time..", 3);
+	charlie = new Member("Charlie", "#00AA00");
+	console.log(charlie.name);
+	dan = new Member("Dan", "#5566EE");
+	
+	story = new Story("My Story","Once upon a time..", 
+						[
+							new StoryUnit(this.charlie, "Once upon"),
+							new StoryUnit(this.dan, "a time"),
+							new StoryUnit(this.charlie, "there was"),
+							new StoryUnit(this.dan, "a little"),
+							new StoryUnit(this.charlie, "man named"),
+							new StoryUnit(this.dan, "Dan Parker."),
+						], 
+						3);
 	
 	onSubmit() { this.submitted = true;  }
 	
+	aestheticModeToggle(){
+		if (this.aestheticMode) {
+			this.aestheticMode = false;
+		}
+		else {
+			this.aestheticMode = true;
+		}
+	}
+	
 	isTextValid() {
-		return (this.new_text.trim().split(" ").length == this.story.per_turn_word_limit) 
+		return (this.new_text.trim().split(" ").length == this.story.per_turn_word_limit);
 	}
 
 	onKey(event:any) {
@@ -76,6 +115,14 @@ export class Story {
 	constructor(
 		public name: string,
 		public text: string,
+		public text_units: string[],
 		public per_turn_word_limit: number,
+	){}
+}
+
+export class StoryUnit {
+constructor(
+		public author: Member,
+		public text: string,
 	){}
 }

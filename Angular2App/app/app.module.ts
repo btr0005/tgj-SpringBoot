@@ -10,13 +10,14 @@ import { JoinComponent } from './join.component';
 import { MemberListComponent } from './memberlist.component';
 import { MembersService } from './members.service';
 
-import { StoryComponent } from './story.component';
+//import { StoryComponent } from './story.component';
+import { StoryModule } from './story.module';
 
 @NgModule({
   imports:  [ 
 		BrowserModule,
 		FormsModule,
-		//StoryModule,
+		StoryModule,
 		AppRoutingModule,
 	],
   providers: [
@@ -25,7 +26,7 @@ import { StoryComponent } from './story.component';
   declarations: [ AppComponent,
 				  JoinComponent,
 				  MemberListComponent,
-				  StoryComponent
+				  //StoryComponent
 				],
   bootstrap:    [ AppComponent ]
 })
