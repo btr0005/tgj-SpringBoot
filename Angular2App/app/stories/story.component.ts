@@ -1,5 +1,5 @@
 import { Component, Input} from '@angular/core';
-import { Member } from './member';
+import { Member } from '../member';
 
 @Component({
   selector: 'story-component',

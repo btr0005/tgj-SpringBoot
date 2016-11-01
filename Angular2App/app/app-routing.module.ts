@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { JoinComponent } from './join.component';
 import { MemberListComponent } from './memberlist.component';
-import { StoryComponent } from './story.component';
+import { StoryComponent } from './stories/story.component';
 
 @NgModule({
 	imports: [

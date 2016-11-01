@@ -10,8 +10,7 @@ import { JoinComponent } from './join.component';
 import { MemberListComponent } from './memberlist.component';
 import { MembersService } from './members.service';
 
-//import { StoryComponent } from './story.component';
-import { StoryModule } from './story.module';
+import { StoryModule } from './stories/story.module';
 
 @NgModule({
   imports:  [ 
@@ -26,7 +25,6 @@ import { StoryModule } from './story.module';
   declarations: [ AppComponent,
 				  JoinComponent,
 				  MemberListComponent,
-				  //StoryComponent
 				],
   bootstrap:    [ AppComponent ]
 })
