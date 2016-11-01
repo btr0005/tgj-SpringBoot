@@ -6,25 +6,19 @@ import { RouterModule } from '@angular/router';
 import { AppComponent }  from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { JoinComponent } from './join.component';
-import { MemberListComponent } from './memberlist.component';
-import { MembersService } from './members.service';
-
+import { MembersModule } from './members/members.module';
 import { StoryModule } from './stories/story.module';
 
 @NgModule({
   imports:  [ 
 		BrowserModule,
 		FormsModule,
+		MembersModule,
 		StoryModule,
 		AppRoutingModule,
 	],
-  providers: [
-		MembersService
-	],
+  providers: [],
   declarations: [ AppComponent,
-				  JoinComponent,
-				  MemberListComponent,
 				],
   bootstrap:    [ AppComponent ]
 })

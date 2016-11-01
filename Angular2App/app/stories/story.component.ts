@@ -1,5 +1,5 @@
 import { Component, Input} from '@angular/core';
-import { Member } from '../member';
+import { Member } from '../members/member';
 
 @Component({
   selector: 'story-component',
@@ -64,7 +64,6 @@ export class StoryComponent {
 	aestheticMode = false;
 	
 	charlie = new Member("Charlie", "#00AA00");
-	console.log(charlie.name);
 	dan = new Member("Dan", "#5566EE");
 	
 	story = new Story("My Story","Once upon a time..", 
@@ -115,7 +114,7 @@ export class Story {
 	constructor(
 		public name: string,
 		public text: string,
-		public text_units: string[],
+		public text_units: StoryUnit[],
 		public per_turn_word_limit: number,
 	){}
 }
