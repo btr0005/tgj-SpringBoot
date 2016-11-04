@@ -13,23 +13,20 @@ public class MemberController {
 
     private final AtomicLong counter = new AtomicLong();
 	private ArrayList<String> members = new ArrayList<String>();
+	
+	private DatabaseFacade dbFacade = new DatabaseFacade(new MembersServiceFake());
 
-	@CrossOrigin(origins = "http://localhost:3000")
+	@CrossOrigin()
     @RequestMapping("/join")
-    public Greeting join(@RequestParam(value="name", defaultValue="World") String name) {
-        
-		String message;
-		
-		if (members.contains(name)) {
-			message = "Hello, %s!";
-		}
-		else {
-			message = "Hello, nice to meet you %s!";
-			members.add(name);
-		}
-		
-		return new Greeting(counter.incrementAndGet(),
-                            String.format(message, name));
+    public Greeting join(@RequestParam(value="name") String name) {
+		String response;
+	
+		if (this.dbFacade.addMember(new Member(name)))
+			response = "New member added to db!";
+		else
+			response = "Failed to add member to db!";
+	
+		return new Greeting(counter.incrementAndGet(), response);
     }
 
 }
