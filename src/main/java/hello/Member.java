@@ -12,8 +12,9 @@ public class Member {
 		this.color = color;
     }
 	
-	public Member(String name) {
+	public Member(String name, String color) {
         this.name = name;
+		this.color = color;
     }
 
     public long getId() {

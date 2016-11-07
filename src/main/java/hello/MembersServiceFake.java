@@ -1,8 +1,11 @@
 package hello;
 
 import java.io.BufferedWriter;
+import java.io.BufferedReader;
 import java.io.FileWriter;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MembersServiceFake implements MembersService {
 
@@ -17,9 +20,9 @@ public class MembersServiceFake implements MembersService {
 			bw = new BufferedWriter(
 						new FileWriter(membersDataFile,	true));
 				
-			bw.write("hi" + member.getName()); //+ "," +
-					 //member.getname() + "," +
-					// member.getcolor() + "," );
+			bw.write(member.getId() + "," +
+					 member.getName() + "," +
+					 member.getColor());
 			bw.newLine();
 			bw.flush();
 			bw.close();
@@ -30,5 +33,20 @@ public class MembersServiceFake implements MembersService {
 		}
 		
 		return true;
+	}
+	
+	public ArrayList<Member> getMembers() {
+		
+		ArrayList<Member> members = new ArrayList<Member>();
+		
+		try(BufferedReader br = new BufferedReader(new FileReader(membersDataFile))) {
+			for(String line; (line = br.readLine()) != null; ) {
+				String[] parts = line.split(",");
+				members.add(new Member(parts[1],parts[2]));
+			}
+		}
+		catch (IOException e) {}
+		
+		return members;
 	}
 }
