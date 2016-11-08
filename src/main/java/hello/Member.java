@@ -16,6 +16,8 @@ public class Member {
         this.name = name;
 		this.color = color;
     }
+	
+	public Member() {}
 
     public long getId() {
         return id;
