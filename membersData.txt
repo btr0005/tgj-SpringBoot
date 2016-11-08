@@ -1,3 +1,9 @@
 0,Brenden,Blue
 0,Brenden,Blue
 0,Brenden,Blue
+0,Brenden,Red
+0,Chortney,#533eb5
+0,Tiler Porridge,#e62f74
+0,Soofjon Steffans,#386736
+0,Busy Phillips,#e03314
+0,Raquel Jordane,#47c0da
