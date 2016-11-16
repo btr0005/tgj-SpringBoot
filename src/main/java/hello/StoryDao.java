@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 
 @Transactional
 public interface StoryDao extends CrudRepository<Story, Long> {
-	
+	Story findById(long id);
 }
